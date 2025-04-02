@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="70.471794mm"
+   height="54.394341mm"
+   viewBox="0 0 70.471794 54.394341"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,1,1,0,10.685074,0,1 @ F,0,1,1,0,10.685074,0,1 @ F,0,1,1,0,10.685074,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.976129,-147.3383)">
+    <path
+       d="m 81.939945,156.2188 28.330085,42.34022 a 7.149444,7.149444 180 0 0 11.884,0 l 28.33008,-42.34022 a 5.7068915,5.7068915 61.893352 0 0 -4.74307,-8.88051 H 116.21203 86.683019 a 5.7068911,5.7068911 118.10665 0 0 -4.743074,8.88051 z"
+       style="fill:#3c6e71;stroke-width:0.314276"
+       id="path3"
+       inkscape:export-filename="dropdown_arrow.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:path-effect="#path-effect3"
+       inkscape:original-d="m 75.997945,147.33829 40.214085,60.10124 40.21408,-60.10124 h -40.21408 z" />
+  </g>
+</svg>

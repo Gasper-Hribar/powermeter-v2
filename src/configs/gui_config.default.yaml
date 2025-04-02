@@ -1,0 +1,29 @@
+version: "v3"
+
+general:
+  # The default language of the application
+
+  fullscreen_mode: False # Options: True or False
+  enable_cursor: False
+  show_logo: False # Options: True or False
+
+  screen_resolution:
+    width: 1920
+    height: 1080
+
+  window_size:
+    width: 800
+    height: 480
+  refresh_rate: 2 # 500 ms
+
+typography:
+  fonts:
+    default: "YU Gothic UI"
+    alternative: "Lato"
+
+  fontsizes:
+    fontsize_normal: 10
+    fontsize_large: 12
+    fontsize_small: 8
+    fontsize_tiny: 6
+    fontsize_huge: 14

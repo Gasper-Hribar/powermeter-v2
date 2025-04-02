@@ -1,0 +1,21 @@
+# add packages to the requirements.txt file
+PyYAML
+types-PyYAML
+pytest
+pydantic
+pandas
+openpyxl
+numpy
+matplotlib
+Pillow
+
+# GUI
+PySide6
+pyqtgraph
+Jinja2
+
+# Conditional packages for Raspberry Pi (ARM)
+pyserial; platform_machine=="aarch64"
+spidev; platform_machine=="aarch64"
+smbus2; platform_machine=="aarch64"
+lgpio; platform_machine=="aarch64"

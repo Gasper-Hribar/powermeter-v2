@@ -1,0 +1,164 @@
+general:
+  logging_level: WARNING # Logger level options: CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET
+  hardware_interface: RASPBERRY_PI # Options: DUMMY or RASPBERRY_PI
+  run_timer: True
+  api:
+    use_api: False
+    host: "0.0.0.0"
+    port: 8000
+  api_rs232:
+    use_api: True
+    communication_name: "uart2"
+    simulate: true
+
+  included_routines:
+    - routine.yaml
+  drivers:
+    hs_driver:
+      name: NO_CHIP # Options: MCP23S17, MCP23S17_40NS, SY89297U, NB6L295, NO_CHIP
+      communication_interface:
+        type: SPI # ignore
+        name: hs_driver_spi
+      sload_pin: 9
+      args: [] # Empty array for args
+      kwargs:
+        address: 0 # Default address for MCP23S17
+
+    flc_mini_driver:
+      communication_interface:
+        type: UART
+        name: uart4
+
+    interface_chain_driver:
+      use_legacy_driver: false
+      communication_interface:
+        type: SPI # ignore
+        name: interface_spi
+      interface_names: [] # example: ["ADD_adapter_test.xlsm"]
+      args: [] # Empty array for args
+      kwargs: {
+          "ON_pin": 8,
+          "PULSE_pin": 7,
+          "INTERLOCK_IN_pin": 18,
+          "BUSY_pin": 24,
+          "INTERPT_pin": 23,
+          "INTERLOCK_OUT_pin": 22,
+          "DA_pin": 26,
+          "DE_pin": 6,
+        } # Empty dictionary for kwargs
+
+uart: # UART settings
+  - port: "/dev/ttyAMA1"
+    baud_rate: 1000000
+    timeout: 1
+    name: "uart1"
+
+  - port: "/dev/ttyAMA2"
+    baud_rate: 115200
+    timeout: 1
+    name: "uart2"
+
+  - port: "/dev/ttyAMA4"
+    baud_rate: 1000000
+    timeout: 1
+    name: "uart4"
+
+spi: # SPI settings
+  - bus: 0
+    device: 0
+    frequency: 1000000
+    mode: 0
+    name: "hs_driver_spi"
+  - bus: 1
+    device: 0
+    frequency: 1000000
+    mode: 0
+    name: "interface_spi"
+
+i2c: # I2C settings
+  - bus: 1
+    name: "i2c0"
+
+# This is a configuration file for powermeter app. 
+#
+# In this config file it is defined:
+#  I2C addresses of four RPi Expander chips 
+#  refresh rate
+#  diode correction factors
+#  resistor values
+#
+
+defaults:
+  refresh rate: 5  # [Hz]
+
+
+diode ports:
+  diodeport 1:
+      i2c address:
+        adc: 0x48
+        tca: 0x38
+
+  diodeport 2:
+      i2c address:
+        adc: 0x49
+        tca: 0x39
+
+  diodeport 3:
+      i2c address:
+        adc: 0x4a
+        tca: 0x3a
+
+  diodeport 4:
+      i2c address:
+        adc: 0x4b
+        tca: 0x3b
+
+diodes:
+  d0.0:
+    name: 'ps100-6bb'
+    resistor: '0'
+    correction: 1
+
+  d0.8:
+    name: 'PS100-7'
+    resistor: '2K'
+    correction: 1
+
+  d0.5:
+    name: 'PS100-6b'
+    resistor: '1K'
+    correction: 1
+
+  d1.2:
+    name: 'PS100-7'
+    resistor: '3K'
+    correction: 1
+
+  d1.0:
+    name: 'SD445'
+    resistor: '2.4K'
+    correction: 1
+
+  d1.4:
+    name: 'RD100'
+    resistor: '3.9K'
+    correction: 1  
+
+  d1.6:
+    name: 'FDS10x10'
+    resisto: '4.7K'
+    correction: 1
+
+  # the list goes on
+
+# resistors used in amplification circuit
+
+resistors:
+  '0': 1000
+  '1': 3000
+  '2': 10000
+  '3': 50000
+  '4': 200000
+  '5': 1000000
+  '6': 5000000
+  '7': 20000000
